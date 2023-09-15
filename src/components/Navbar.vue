@@ -4,7 +4,7 @@
   <nav class="navbar nav">
     <a class="navbar-brand" href="#/">Store</a>
     <a class="cart-btn btn my-sm-0" href="#/cart">
-      <img src="@/assets/cart-icon.svg" width="30" height="30" />
+      <img src="@/assets/cart-icon.svg" width="35" height="35" />
     </a>
   </nav>
 </template>
@@ -17,7 +17,7 @@
 }
 .navbar-brand {
   color: #b3b1b1;
-  font-size: 1.5rem;
+  font-size: 2rem;
   margin-left: 1rem;
 }
 .navbar-brand:hover {
