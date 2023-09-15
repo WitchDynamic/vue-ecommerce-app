@@ -2,6 +2,7 @@
 import { ref, computed } from "vue";
 import ProductsPage from "./components/ProductsPage.vue";
 import CartPage from "./components/CartPage.vue";
+import Navbar from "./components/Navbar.vue";
 
 const routes = {
   "/": ProductsPage,
@@ -20,9 +21,12 @@ const currentView = computed(() => {
 </script>
 
 <template>
-  <a href="#/">Products</a>
-  <a href="#/cart">Cart</a>
+  <Navbar class="nav" />
   <component :is="currentView" />
 </template>
 
-<style scoped></style>
+<style scoped>
+.btn {
+  margin: 2px;
+}
+</style>
