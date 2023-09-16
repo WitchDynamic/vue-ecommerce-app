@@ -1,12 +1,13 @@
 <script setup>
 import ProductItem from "./ProductItem.vue";
-import { products } from "../Products";
+import { useCartStore } from "@/stores/cart";
+const cartStore = useCartStore();
 </script>
 
 <template>
   <h1 class="title">Creatures List</h1>
   <div class="product-grid">
-    <div class="product-container" v-for="product in products">
+    <div class="product-container" v-for="product in cartStore.products">
       <ProductItem :product="product" />
     </div>
   </div>
