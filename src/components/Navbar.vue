@@ -1,22 +1,23 @@
 <script setup></script>
 
 <template>
-  <nav class="navbar nav">
-    <a class="navbar-brand" href="#/">Store</a>
+  <nav class="navbar navbar-fixed-top">
+    <a class="navbar-brand" href="#/">Galactic Creature Exchange</a>
     <a class="cart-btn btn my-sm-0" href="#/cart">
       <img src="@/assets/cart-icon.svg" width="35" height="35" />
+      <span class="badge badge-light">4</span>
     </a>
   </nav>
 </template>
 
 <style scope>
-.nav {
-  background-color: #282828;
-  box-shadow: 0 1px 20px 5px #000000;
+.navbar {
+  background-color: #212121;
+  box-shadow: 0 1px 5px 1px #000000;
   margin-bottom: 2rem;
 }
 .navbar-brand {
-  color: #b3b1b1;
+  color: #e2e1e1;
   font-size: 2rem;
   margin-left: 1rem;
 }
@@ -31,6 +32,6 @@
   border: none;
 }
 .cart-btn:hover {
-  background-color: #363636;
+  background-color: #424242;
 }
 </style>
