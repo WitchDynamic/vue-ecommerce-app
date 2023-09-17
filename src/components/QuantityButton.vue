@@ -16,7 +16,12 @@ const props = defineProps({
       -
     </button>
 
-    <input type="text" class="form-control input-box" :value="quantity" />
+    <input
+      disabled
+      type="text"
+      class="form-control input-box"
+      :value="quantity"
+    />
     <button
       @click="$emit('updateQuantity', 1)"
       class="btn btn-outline-secondary"
