@@ -8,7 +8,7 @@ import CartItem from "./CartItem.vue";
   <h1 class="title">Your Cart</h1>
   <div class="container">
     <div class="row align-items-start">
-      <div class="col-8">
+      <div>
         <div v-if="!cartStore.isEmpty">
           <div v-for="product in cartStore.cart" style="margin: 1rem">
             <CartItem :product="product" />
@@ -18,8 +18,9 @@ import CartItem from "./CartItem.vue";
           <h3>Your cart is empty!</h3>
         </div>
       </div>
-      <div class="col-4">
-        <div class="total-price-div">
+      <div class="total-price-spacer" />
+      <div>
+        <div class="total-price-div mt-3">
           <h2>Total Price:</h2>
           <h3>{{ cartStore.totalPrice }} Credits</h3>
         </div>
@@ -44,9 +45,15 @@ import CartItem from "./CartItem.vue";
   display: flex;
   flex-direction: column;
   align-items: center;
+  float: right;
 }
 .empty-cart-text {
   display: flex;
   justify-content: center;
+}
+.total-price-spacer {
+  border-bottom: solid;
+  border-width: thin;
+  border-color: #3c3c3c;
 }
 </style>
