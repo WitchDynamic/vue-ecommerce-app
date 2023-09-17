@@ -1,11 +1,14 @@
-<script setup></script>
+<script setup>
+import { useCartStore } from "@/stores/cart";
+const cartStore = useCartStore();
+</script>
 
 <template>
   <nav class="navbar navbar-fixed-top">
     <a class="navbar-brand" href="#/">Galactic Creature Exchange</a>
     <a class="cart-btn btn my-sm-0" href="#/cart">
       <img src="@/assets/cart-icon.svg" width="35" height="35" />
-      <span class="badge badge-light">4</span>
+      <span class="badge badge-light">{{ cartStore.totalItemCount }}</span>
     </a>
   </nav>
 </template>
