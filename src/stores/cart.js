@@ -29,15 +29,18 @@ export const useCartStore = defineStore("cart", {
 
   actions: {
     addItems(count, product) {
-      const existingItem = this.cart.findIndex(
-        (item) => item.id === product.id
-      );
-      if (existingItem > -1) {
-        // item is already in the cart, update count property
-        this.cart[existingItem].amount += count;
-      } else {
-        // initialize product in cart and add amount property
-        this.cart.push({ ...product, amount: count });
+      // if user clicks add to cart with quantity = 0, do nothing
+      if (count > 0) {
+        const existingItem = this.cart.findIndex(
+          (item) => item.id === product.id
+        );
+        if (existingItem > -1) {
+          // item is already in the cart, update count property
+          this.cart[existingItem].amount += count;
+        } else {
+          // initialize product in cart and add amount property
+          this.cart.push({ ...product, amount: count });
+        }
       }
     },
   },
