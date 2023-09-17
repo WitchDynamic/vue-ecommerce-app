@@ -25,6 +25,9 @@ export const useCartStore = defineStore("cart", {
         0
       );
     },
+    isEmpty: (state) => {
+      return state.cart.length == 0 ? true : false;
+    },
   },
 
   actions: {

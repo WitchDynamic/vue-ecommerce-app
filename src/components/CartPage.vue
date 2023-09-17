@@ -9,8 +9,13 @@ import CartItem from "./CartItem.vue";
   <div class="container">
     <div class="row align-items-start">
       <div class="col-8">
-        <div v-for="product in cartStore.cart" style="margin: 1rem">
-          <CartItem :product="product" />
+        <div v-if="!cartStore.isEmpty">
+          <div v-for="product in cartStore.cart" style="margin: 1rem">
+            <CartItem :product="product" />
+          </div>
+        </div>
+        <div v-else class="empty-cart-text">
+          <h3>Your cart is empty!</h3>
         </div>
       </div>
       <div class="col-4">
@@ -29,7 +34,6 @@ import CartItem from "./CartItem.vue";
   padding-bottom: 2rem;
   color: #e2e1e1;
 }
-
 .cart-grid {
   justify-content: center;
   display: flex;
@@ -40,5 +44,9 @@ import CartItem from "./CartItem.vue";
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+.empty-cart-text {
+  display: flex;
+  justify-content: center;
 }
 </style>
