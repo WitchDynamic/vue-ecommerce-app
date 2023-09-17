@@ -2,10 +2,13 @@ import { defineStore } from "pinia";
 import { products } from "@/Products.js";
 
 export const useCartStore = defineStore("cart", {
-  state: () => ({
-    products,
-    cart: [],
-  }),
+  state: () => {
+    const savedCart = JSON.parse(localStorage.getItem("cart"));
+    return {
+      products,
+      cart: savedCart ? savedCart : [],
+    };
+  },
 
   getters: {
     // total amount of items in the cart
