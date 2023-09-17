@@ -1,4 +1,7 @@
 <script setup>
+import { useCartStore } from "@/stores/cart";
+const cartStore = useCartStore();
+
 const props = defineProps({
   product: Object,
 });
@@ -15,7 +18,14 @@ const props = defineProps({
     <div class="product-info">
       <h4>{{ product.name }}</h4>
       <p>Quantity: {{ product.amount }}</p>
-      <Button class="trash-button">
+      <Button
+        @click="
+          () => {
+            cartStore.removeItem(product.id);
+          }
+        "
+        class="trash-button"
+      >
         <img src="@/assets/trash-icon.svg" width="25" height="25" />
       </Button>
     </div>
