@@ -1,25 +1,26 @@
 <script setup>
-import { useCartStore } from "@/stores/cart";
-const cartStore = useCartStore();
+const props = defineProps({
+  product: Object,
+});
 </script>
 
 <template>
   <div style="display: flex">
     <img
-      :src="cartStore.products[0].image"
+      :src="product.image"
       width="110"
       height="110"
       style="border-radius: 10px"
     />
     <div class="product-info">
-      <h4>{{ cartStore.products[0].name }}</h4>
-      <p>Quantity: 2</p>
+      <h4>{{ product.name }}</h4>
+      <p>Quantity: {{ product.amount }}</p>
       <Button class="trash-button">
         <img src="@/assets/trash-icon.svg" width="25" height="25" />
       </Button>
     </div>
     <div class="product-price">
-      <h5 style="color: #fff">Credits</h5>
+      <h5 style="color: #fff">{{ product.price * product.amount }} Credits</h5>
     </div>
   </div>
 </template>

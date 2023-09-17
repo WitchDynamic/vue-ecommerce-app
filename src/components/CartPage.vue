@@ -1,17 +1,22 @@
 <script setup>
+import { useCartStore } from "@/stores/cart";
+const cartStore = useCartStore();
 import CartItem from "./CartItem.vue";
 </script>
+
 <template>
   <h1 class="title">Your Cart</h1>
   <div class="container">
     <div class="row align-items-start">
       <div class="col-8">
-        <CartItem />
+        <div v-for="product in cartStore.cart" style="margin: 1rem">
+          <CartItem :product="product" />
+        </div>
       </div>
       <div class="col-4">
         <div class="total-price-div">
           <h2>Total Price:</h2>
-          <h3>10500 Credits</h3>
+          <h3>{{ cartStore.totalPrice }} Credits</h3>
         </div>
       </div>
     </div>
