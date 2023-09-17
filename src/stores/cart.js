@@ -9,8 +9,14 @@ export const useCartStore = defineStore("cart", {
 
   getters: {
     // total amount of items in the cart
-    itemCount: (state) => {
+    totalItemCount: (state) => {
       return state.cart.reduce((count, product) => count + product.amount, 0);
+    },
+    specificItemCount: (state) => (productId) => {
+      // find by id
+      const product = state.cart.find((i) => i.id === productId);
+      //if product is in cart, return amount, else 0
+      return product ? product.amount : 0;
     },
     //total price of items in the cart
     totalPrice: (state) => {
