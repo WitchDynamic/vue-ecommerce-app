@@ -18,7 +18,7 @@ const props = defineProps({
     <div class="product-info">
       <h4>{{ product.name }}</h4>
       <p>Quantity: {{ product.amount }}</p>
-      <Button
+      <button
         @click="
           () => {
             cartStore.removeItem(product.id);
@@ -27,7 +27,7 @@ const props = defineProps({
         class="trash-button"
       >
         <img src="@/assets/trash-icon.svg" width="25" height="25" />
-      </Button>
+      </button>
     </div>
     <div class="product-price">
       <h5 style="color: #fff">{{ product.price * product.amount }} Credits</h5>

@@ -23,7 +23,7 @@ function updateQuantity(val) {
       <h5 class="card-text">{{ product.name }}</h5>
       <p class="card-text">{{ product.price }} Credits</p>
       <QuantityButton :quantity="quantity" @updateQuantity="updateQuantity" />
-      <Button
+      <button
         @click="
           () => {
             cartStore.addItems(quantity, product);
@@ -31,8 +31,9 @@ function updateQuantity(val) {
           }
         "
         class="btn btn-primary card-btn"
-        >Add To Cart</Button
       >
+        Add To Cart
+      </button>
     </div>
   </div>
 </template>

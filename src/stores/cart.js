@@ -51,7 +51,6 @@ export const useCartStore = defineStore("cart", {
     },
     // completely removes product from cart
     removeItem(productId) {
-      console.log("Removing Item");
       this.cart = this.cart.filter(
         (existingProduct) => existingProduct.id !== productId
       );
